@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praticando</title>
+    <style>
+      body {
+        background-image: linear-gradient(
+          to left,
+          rgb(132, 132, 196),
+          rgb(100, 100, 167)
+        );
+      }
+
+      h1 {
+        font-weight: normal;
+      }
+
+      p {
+        font-size: 15pt;
+      }
+
+      div.general {
+        text-align: center;
+      }
+
+      main#number {
+      }
+
+      input#somar {
+        font-weight: bold;
+        font-size: 1.5em;
+        color: black;
+        background-color: rgb(196, 90, 90);
+        border-radius: 8px;
+        border-style: none;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.288);
+        margin-top: 10px;
+        width: 150px;
+        height: 60px;
+      }
+
+      input.number {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bolder;
+        color: blue;
+        height: 50px;
+        width: 70px;
+        border-style: none;
+        box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.541);
+      }
+
+      main > p#soma {
+        color: white;
+        font-size: 3em;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.397);
+      }
+
+      p#res {
+        font-weight: bold;
+        font-size: 2em;
+        color: rgb(211, 211, 211);
+        text-shadow: 1pt 1pt 1pt rgba(0, 0, 0, 0.514);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="general">
+      <header>
+        <h1>Praticando HTML, CSS E JavaScript.</h1>
+        <p>Segue abaixo minha tentativa de fazer uma calculadora sozinho.</p>
+      </header>
+      <div>
+        <main>
+          <p>Vamos calcular quanto é:</p>
+          <input type="number" name="n1" id="n1" class="number" />
+          <p id="soma">+</p>
+          <input type="number" name="n2" id="n2" class="number" /> <br />
+          <input type="button" value="Somar" onclick="somar()" id="somar" />
+          <p id="res"></p>
+        </main>
+      </div>
+    </div>
+    <script>
+      function somar() {
+        var nn1 = window.document.getElementById("n1");
+        var nn2 = window.document.getElementById("n2");
+        var res = window.document.getElementById("res");
+        var number1 = Number(nn1.value);
+        var number2 = Number(nn2.value);
+        var s = number1 + number2;
+        res.innerHTML = `A soma entre ${number1} e ${number2} é igual a ${s}`;
+      }
+    </script>
+  </body>
+</html>
